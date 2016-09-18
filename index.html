@@ -1,0 +1,105 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="scripts.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="bootstrap-checkbox.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<div class="container" id="myWizard">
+  
+   <h3>Woningconfigurator</h3>
+  
+   <hr>
+  
+   <div class="progress">
+     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 20%;">
+       Stap 1 van 8
+     </div>
+   </div>
+  
+   <div class="navbar">
+      <div class="navbar-inner">
+            <ul class="nav nav-pills">
+               <li class="active"><a href="#stap1" data-toggle="tab" data-stap="1">vraag 1</a></li>
+               <li><a href="#stap2" data-toggle="tab" data-stap="2">vraag 2</a></li>
+               <li><a href="#stap3" data-toggle="tab" data-stap="3">vraag 3</a></li>
+               <li><a href="#stap4" data-toggle="tab" data-stap="4">vraag 4</a></li>
+               <li><a href="#stap5" data-toggle="tab" data-stap="5">vraag 5</a></li>
+               <li><a href="#stap6" data-toggle="tab" data-stap="6">vraag 6</a></li>
+               <li><a href="#stap7" data-toggle="tab" data-stap="7">vraag 7</a></li>
+               <li><a href="#stap8" data-toggle="tab" data-stap="8">Onze prijs</a></li>
+
+            </ul>
+      </div>
+   </div>
+   <div class="tab-content">
+      <div class="tab-pane fade in active" id="stap1">
+         
+
+          <div class="container">
+            <label>Wil je een aangebouwde garage bij de woning?</label>
+            <br>
+            <div class="garage">
+              <img src="./images/garage.jpg" alt="garage" id="garagePicture" style="width:304px;height:228px;">
+            </div>
+            <div class="Checkbox1">
+              <input id="input-1" type="checkbox">
+              <script>
+                $('#input-1').checkboxpicker({
+                  html: true,
+                  offLabel: '<span class="glyphicon glyphicon-remove">',
+                  onLabel: '<span class="glyphicon glyphicon-ok">'
+                });
+              </script>  
+            </div>
+          </div>
+        
+        </div>
+
+         <a class="btn btn-default next" href="#">Doorgaan</a>
+      </div>
+      <div class="tab-pane fade" id="stap2">
+         <div class="well"> 
+          
+            <label>Waar heb je van ons gehoord?</label>
+            <select class="form-control  input-lg">
+              <option value="internet">Via internet</option>
+              <option selected="" value="aannemer">Aannemer</option>
+            </select>
+            <br>
+            <label>Welke site of aannemer?</label>
+            <input class="form-control  input-lg">
+            
+         </div>
+         <a class="btn btn-default next" href="#">Doorgaan</a>
+      </div>
+      <div class="tab-pane fade" id="stap3">
+        <div class="well"> <h2>stap 3</h2>bla bla bla</div>
+         <a class="btn btn-default next" href="#">Doorgaan</a>
+      </div>
+      <div class="tab-pane fade" id="stap4">
+        <div class="well"> <h2>stap 4</h2>bla bla bla</div>
+         <a class="btn btn-default next" href="#">Doorgaan</a>
+      </div>
+            <div class="tab-pane fade" id="stap5">
+        <div class="well"> <h2>stap 5</h2>bla bla bla</div>
+         <a class="btn btn-default next" href="#">Doorgaan</a>
+      </div>
+            <div class="tab-pane fade" id="stap6">
+        <div class="well"> <h2>stap 6</h2>bla bla bla</div>
+         <a class="btn btn-default next" href="#">Doorgaan</a>
+      </div>
+            <div class="tab-pane fade" id="stap7">
+        <div class="well"> <h2>stap 7</h2>bla bla bla</div>
+         <a class="btn btn-default next" href="#">Doorgaan</a>
+      </div>
+      <div class="tab-pane fade" id="stap8">
+        <div class="well"> <h2>Onze prijs</h2>€ 50.000</div>
+         <a class="btn btn-success first" href="#">Gereed</a>
+      </div>
+   </div>
+
+  
+</div>
+
+

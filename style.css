@@ -1,0 +1,13 @@
+.garage {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+#garagePicture {
+    border-radius:10px;
+}
+
+.container {
+    margin-top: 30px;
+    text-align: center;
+}
