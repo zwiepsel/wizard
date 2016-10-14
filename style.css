@@ -9,9 +9,39 @@
 
 .container {
     margin-top: 30px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .next {
     margin-top:20px;
+}
+
+.prev {
+    margin-top:20px;
+}
+
+#stap1 .prev{
+    display:none;
+}
+
+.page-wrapper {
+    display:inline-block;
+    width:100%;
+}
+
+.tab-content {
+    width:40%;
+
+    float:left;
+}
+
+.total-content {
+    width:30%;
+    text-align: center;
+    float:left;
+}
+
+.tab-container {
+    text-align: center;
+
 }
