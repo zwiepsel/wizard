@@ -19,14 +19,14 @@
   <div class="navbar">
     <div class="navbar-inner">
       <ul class="nav nav-pills">
-        <li class="active"><a href="#stap1" data-toggle="tab" data-stap="1">vraag 1</a></li>
-        <li><a href="#stap2" data-toggle="tab" data-stap="2">vraag 2</a></li>
+        <li class="active"><a href="#stap1" data-toggle="tab" data-stap="1">Carport</a></li>
+        <li><a href="#stap2" data-toggle="tab" data-stap="2">Garage</a></li>
         <li><a href="#stap3" data-toggle="tab" data-stap="3">vraag 3</a></li>
         <li><a href="#stap4" data-toggle="tab" data-stap="4">vraag 4</a></li>
         <li><a href="#stap5" data-toggle="tab" data-stap="5">vraag 5</a></li>
         <li><a href="#stap6" data-toggle="tab" data-stap="6">vraag 6</a></li>
         <li><a href="#stap7" data-toggle="tab" data-stap="7">vraag 7</a></li>
-        <li><a href="#stap8" data-toggle="tab" data-stap="8">Onze prijs</a></li>
+        <li><a href="#stap8" data-toggle="tab" data-stap="8">Uw prijs</a></li>
 
       </ul>
     </div>
@@ -42,10 +42,10 @@
           </div>
           <div class="Checkbox1">
             <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-danger" ng-click="removeExtras(2)">
+              <label class="btn btn-danger" ng-click="removeExtras(1)">
                 <input type="checkbox" autocomplete="off"> Verwijderen
               </label>
-              <label class="btn btn-success" ng-click="addExtras(2)">
+              <label class="btn btn-success" ng-click="addExtras(1)">
                 <input type="checkbox" autocomplete="off"> Toevoegen
               </label>
             </div>
@@ -77,10 +77,6 @@
             <a class="btn btn-default prev" href="#">Terug</a>
             <a class="btn btn-default next" href="#">Doorgaan</a>
           </div>
-        </div>
-        <div>
-          <a class="btn btn-default prev" href="#">Terug</a>
-          <a class="btn btn-default next" href="#">Doorgaan</a>
         </div>
       </div>
       <div class="tab-pane fade" id="stap3">
@@ -125,7 +121,7 @@
       </div>
       <div class="tab-pane fade" id="stap8">
         <div class="well">
-          <h2>Onze prijs</h2>€ 50.000</div>
+          <h2>Uw prijs</h2>€ 50.000</div>
         <a class="btn btn-success first" href="#">Gereed</a>
       </div>
     </div>
@@ -135,8 +131,8 @@
         <p><b>{{totalPrice | currency:"€"}}</b></p>
         <br>
         <h4>Toevoegingen</h4>
-        <div ng-repeat="extra in extras track by $index">
-          {{extra.name}}
+        <div ng-repeat="extra in extras">
+          {{extra.description}}
         </div>
       </div>
     </div>

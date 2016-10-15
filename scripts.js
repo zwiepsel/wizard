@@ -1,91 +1,79 @@
-  var app = angular.module('demo', [])
+  var app = angular.module('archilogus', [])
     .controller('configuratorController', function ($scope) {
 
       var carport = false;
       var garage = false;
       $scope.extras = [];
       $scope.totalPrice = 200000;
-      //console.log($scope.extras);
 
+      function findById(source, id) {
+        for (var i = 0; i < source.length; i++) {
+          if (source[i].id === id) {
+            return source[i];
+          }
+        }
+        throw "Couldn't find object with id: " + id;
+      }
+      //switch between all the extras
       $scope.addExtras = function (value) {
         switch (value) {
           case 1:
-          for(var extra in $scope.extras)
-          {       
-            // console.log($scope.extras[value].id)
-          }
-          if(!carport){
-          $scope.extras.push({
-              id: 1,
-              name: "carport  €25000"
-            })
-            carport = true;
+            if (!carport) {
+              $scope.extras.push({
+                id: 1,
+                description: "Carport €25.000"
+              })
+              $scope.totalPrice = $scope.totalPrice + 25000
+              carport = true;
+              break;
+            }
             break;
-          }
-
           case 2:
-          console.log(value)
-          for(var extra in $scope.extras)
-          {       
-      
-          }
-          if(!garage)
-          {
-          $scope.extras.push({
-              id: 2,
-              name: "garage  €25000"
-            })
-            garage = true;
+            if (!garage) {
+              $scope.extras.push({
+                id: 2,
+                description: "Garage €25.000"
+              })
+              $scope.totalPrice = $scope.totalPrice + 25000
+              garage = true;
+              break;
+            }
             break;
-          }
 
-          default:
-            console.log('geen match' )
-          
-
-          
         }
-        //   case 2:
 
-        //     if ($scope.extras.length > 0){
-        //     for (i = 0; i < $scope.extras.length; i++)  {
-        //       $scope.extras.push({
-        //         id: 2,
-        //         name: "Gargage  €25000"
-        //       })
-        //       $scope.totalPrice = $scope.totalPrice + 25000;
-        //       console.log($scope.extras)
-        //     }
-        // }
       }
 
+      //switch to remove the extras
       $scope.removeExtras = function (value) {
+        var result = 0
         switch (value) {
           case 1:
-              for(var value in $scope.extras)
-              {       
-                var extra = $scope.extras[value].id
-                console.log(extra)
-                // if(extra = 1)
-                // {
-
-                // }
-              }
-          case 2:
-            for(var value in $scope.extras)
-            {       
-              var extra = $scope.extras[value].id
-              console.log(extra)
-              // if(extra = 1)
-              // {
-
-              // }
+            if (carport) {
+              index = $scope.extras.indexOf(findById($scope.extras, value))
+              $scope.extras.splice(index, 1)
+              $scope.totalPrice = $scope.totalPrice - 25000
+              carport = false;
             }
+            break;
+
+          case 2:
+            if (garage) {
+              index = $scope.extras.indexOf(findById($scope.extras, value))
+              $scope.extras.splice(index, 1)
+              $scope.totalPrice = $scope.totalPrice - 25000
+              garage = false;
+              break;
+            }
+          default:
+            break;
         }
+
       }
     });
-  angular.bootstrap(document, ['demo']);
+  angular.bootstrap(document, ['archilogus']);
 
+  //checkbox by code
   $('#input-1').checkboxpicker({
     html: true,
     offLabel: '<span class="glyphicon glyphicon-remove">',
