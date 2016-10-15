@@ -1,4 +1,4 @@
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="bootstrap.min.js"></script>
 <script src="bootstrap-checkbox.js"></script>
 <script src="angular.min.js"></script>
@@ -42,10 +42,10 @@
           </div>
           <div class="Checkbox1">
             <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-danger" ng-click="removeExtras()">
+              <label class="btn btn-danger" ng-click="removeExtras(2)">
                 <input type="checkbox" autocomplete="off"> Verwijderen
               </label>
-              <label class="btn btn-success" ng-click="addExtras()">
+              <label class="btn btn-success" ng-click="addExtras(2)">
                 <input type="checkbox" autocomplete="off"> Toevoegen
               </label>
             </div>
@@ -57,61 +57,71 @@
         </div>
       </div>
       <div class="tab-pane fade" id="stap2">
-        <div class="well">
-
-          <label>Waar heb je van ons gehoord?</label>
-          <select class="form-control  input-lg">
-              <option value="internet">Via internet</option>
-              <option selected="" value="aannemer">Aannemer</option>
-            </select>
+        <div class="tab-container">
+          <label>Wil je een aangebouwde garage bij de woning?</label>
           <br>
-          <label>Welke site of aannemer?</label>
-          <input class="form-control  input-lg">
-        </div>
-                  <div>
+          <div class="garage">
+            <img src="./images/garage.jpg" alt="garage" id="garagePicture" style="width:304px;height:228px;">
+          </div>
+          <div class="Checkbox1">
+            <div class="btn-group" data-toggle="buttons">
+              <label class="btn btn-danger" ng-click="removeExtras(2)">
+                <input type="checkbox" autocomplete="off"> Verwijderen
+              </label>
+              <label class="btn btn-success" ng-click="addExtras(2)">
+                <input type="checkbox" autocomplete="off"> Toevoegen
+              </label>
+            </div>
+          </div>
+          <div>
             <a class="btn btn-default prev" href="#">Terug</a>
             <a class="btn btn-default next" href="#">Doorgaan</a>
           </div>
+        </div>
+        <div>
+          <a class="btn btn-default prev" href="#">Terug</a>
+          <a class="btn btn-default next" href="#">Doorgaan</a>
+        </div>
       </div>
       <div class="tab-pane fade" id="stap3">
         <div class="well">
           <h2>stap 3</h2>bla bla bla</div>
-          <div>
-            <a class="btn btn-default prev" href="#">Terug</a>
-            <a class="btn btn-default next" href="#">Doorgaan</a>
-          </div>
+        <div>
+          <a class="btn btn-default prev" href="#">Terug</a>
+          <a class="btn btn-default next" href="#">Doorgaan</a>
+        </div>
       </div>
       <div class="tab-pane fade" id="stap4">
         <div class="well">
           <h2>stap 4</h2>bla bla bla</div>
-          <div>
-            <a class="btn btn-default prev" href="#">Terug</a>
-            <a class="btn btn-default next" href="#">Doorgaan</a>
-          </div>
+        <div>
+          <a class="btn btn-default prev" href="#">Terug</a>
+          <a class="btn btn-default next" href="#">Doorgaan</a>
+        </div>
       </div>
       <div class="tab-pane fade" id="stap5">
         <div class="well">
           <h2>stap 5</h2>bla bla bla</div>
-                 <div>
-            <a class="btn btn-default prev" href="#">Terug</a>
-            <a class="btn btn-default next" href="#">Doorgaan</a>
-          </div>
+        <div>
+          <a class="btn btn-default prev" href="#">Terug</a>
+          <a class="btn btn-default next" href="#">Doorgaan</a>
+        </div>
       </div>
       <div class="tab-pane fade" id="stap6">
         <div class="well">
           <h2>stap 6</h2>bla bla bla</div>
-                <div>
-            <a class="btn btn-default prev" href="#">Terug</a>
-            <a class="btn btn-default next" href="#">Doorgaan</a>
-          </div>
+        <div>
+          <a class="btn btn-default prev" href="#">Terug</a>
+          <a class="btn btn-default next" href="#">Doorgaan</a>
+        </div>
       </div>
       <div class="tab-pane fade" id="stap7">
         <div class="well">
           <h2>stap 7</h2>bla bla bla</div>
-                 <div>
-            <a class="btn btn-default prev" href="#">Terug</a>
-            <a class="btn btn-default next" href="#">Doorgaan</a>
-          </div>
+        <div>
+          <a class="btn btn-default prev" href="#">Terug</a>
+          <a class="btn btn-default next" href="#">Doorgaan</a>
+        </div>
       </div>
       <div class="tab-pane fade" id="stap8">
         <div class="well">
@@ -121,8 +131,13 @@
     </div>
     <div class="total-content" style="">
       <div class="totalPrice">
-      <h3>Onze prijs</h3>
-
+        <h3>Totaalprijs</h3>
+        <p><b>{{totalPrice | currency:"€"}}</b></p>
+        <br>
+        <h4>Toevoegingen</h4>
+        <div ng-repeat="extra in extras track by $index">
+          {{extra.name}}
+        </div>
       </div>
     </div>
   </div>
