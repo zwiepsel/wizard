@@ -1,18 +1,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="bootstrap.min.js"></script>
-<script src="bootstrap-checkbox.js"></script>
-<script src="angular.min.js"></script>
-<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.8/angular-locale_nl-nl.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.10.2/validator.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 <div class="container" id="myWizard" ng-controller="configuratorController">
-
-  <h3>Woningconfigurator</h3>
-
+  <h3 class="title">Woningconfigurator</h3>
   <hr>
-
   <div class="progress">
     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 20%;">
-      Stap 1 van 8
+      Stap 1 van 5
     </div>
   </div>
 
@@ -21,13 +20,9 @@
       <ul class="nav nav-pills">
         <li class="active"><a href="#stap1" data-toggle="tab" data-stap="1">Carport</a></li>
         <li><a href="#stap2" data-toggle="tab" data-stap="2">Garage</a></li>
-        <li><a href="#stap3" data-toggle="tab" data-stap="3">vraag 3</a></li>
-        <li><a href="#stap4" data-toggle="tab" data-stap="4">vraag 4</a></li>
-        <li><a href="#stap5" data-toggle="tab" data-stap="5">vraag 5</a></li>
-        <li><a href="#stap6" data-toggle="tab" data-stap="6">vraag 6</a></li>
-        <li><a href="#stap7" data-toggle="tab" data-stap="7">vraag 7</a></li>
-        <li><a href="#stap8" data-toggle="tab" data-stap="8">Uw prijs</a></li>
-
+        <li><a href="#stap3" data-toggle="tab" data-stap="3">65+</a></li>
+        <li><a href="#stap4" data-toggle="tab" data-stap="4">Verbrede woonkamer</a></li>
+        <li><a href="#stap5" data-toggle="tab" data-stap="5">Uw prijs</a></li>
       </ul>
     </div>
   </div>
@@ -38,7 +33,7 @@
           <label>Wilt u een carport bij uw woning?</label>
           <br>
           <div class="garage">
-            <img src="./images/02 optie.jpg" alt="garage" id="Picture" style="width:304px;height:228px;">
+            <img src="http://www.archilogus.nl/wp-content/uploads/2016/10/02-optie.jpg" alt="garage" id="Picture" style="width:304px;height:228px;">
           </div>
           <div class="Checkbox1">
             <div class="btn-group" data-toggle="buttons">
@@ -61,7 +56,7 @@
           <label>Wilt u een aangebouwde garage bij uw woning?</label>
           <br>
           <div class="garage">
-            <img src="./images/03 optie garage vv.jpg" alt="garage" id="Picture" style="width:304px;height:228px;">
+            <img src="http://www.archilogus.nl/wp-content/uploads/2016/10/03-optie-garage-vv.jpg" alt="garage" id="Picture" style="width:304px;height:228px;">
           </div>
           <div class="Checkbox1">
             <div class="btn-group" data-toggle="buttons">
@@ -84,7 +79,7 @@
           <label>Wilt u een aangepaste 65+ woning?</label>
           <br>
           <div class="garage">
-            <img src="./images/04 optie 65+.jpg" alt="65+" id="Picture" style="width:304px;height:228px;">
+            <img src="http://www.archilogus.nl/wp-content/uploads/2016/10/04-optie-65.jpg" alt="65+" id="Picture" style="width:304px;height:228px;">
           </div>
           <div class="Checkbox1">
             <div class="btn-group" data-toggle="buttons">
@@ -104,10 +99,10 @@
       </div>
       <div class="tab-pane fade" id="stap4">
         <div class="tab-container">
-          <label>Wilt u een aangepaste 65+ met een garage bij uw woning?</label>
+          <label>Wilt u een verbrede woonkamer bij uw woning?</label>
           <br>
           <div class="garage">
-            <img src="./images/05 optie garage 65+.jpg" alt="65+garage" id="Picture" style="width:304px;height:228px;">
+            <img src="http://www.archilogus.nl/wp-content/uploads/2016/10/06-optie-cp-brede-wk.jpg" alt="65+garage" id="Picture" style="width:304px;height:228px;">
           </div>
           <div class="Checkbox1">
             <div class="btn-group" data-toggle="buttons">
@@ -126,61 +121,59 @@
         </div>
       </div>
       <div class="tab-pane fade" id="stap5">
-        <div class="tab-container">
-          <label>Wilt u een carport en een brede woonkamer bij uw woning?</label>
-          <br>
-          <div class="garage">
-            <img src="./images/06 optie cp + brede wk.jpg" alt="carportbreedwk" id="Picture" style="width:304px;height:228px;">
-          </div>
-          <div class="Checkbox1">
-            <div class="btn-group" data-toggle="buttons">
-              <label class="btn btn-danger" ng-click="removeExtras(5)">
-                <input type="checkbox" autocomplete="off"> Verwijderen
-              </label>
-              <label class="btn btn-success" ng-click="addExtras(5)">
-                <input type="checkbox" autocomplete="off"> Toevoegen
-              </label>
-            </div>
-          </div>
+        <div class="well">
+          <h3 ng-hide="extras.length === 0">extra's</h3>
           <div>
-            <a class="btn btn-default prev" href="#">Terug</a>
-            <a class="btn btn-default next" href="#">Doorgaan</a>
+            <div ng-repeat="extra in extras">
+              {{extra.description}}
+            </div>
+            <h2>Uw prijs</h2>
+          </div>
+          <div class="totalPrice">
+            <h4>{{totalPrice | currency : "€ "}}
+              <h4>
           </div>
         </div>
-      </div>
-      <div class="tab-pane fade" id="stap6">
-        <div class="well">
-          <h2>stap 6</h2>bla bla bla</div>
-        <div>
-          <a class="btn btn-default prev" href="#">Terug</a>
-          <a class="btn btn-default next" href="#">Doorgaan</a>
+        <div class="emailForm">
+          <div class="emailFields">
+            <form name="email" id="email" data-toggle="validator" role="form">
+              <div class="form-group has-feedback">
+                <div class="input-group">
+                  <label for="inputName" class="control-label">Uw naam</label>
+                  <input type="text" class="form-control" ng-model="user.name" id="inputName" placeholder="Uw naam" required>
+                  <span for="inputName" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              <div class="form-group has-feedback">
+                <div class="input-group">
+                  <label for="inputEmail" class="control-label">Email</label>
+                  <input type="email" class="form-control" ng-model="user.email" id="inputEmail" placeholder="Uw email" data-error="Dit is geen geldige email"
+                    required>
+                  <span for="inputEmail" class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+
         </div>
-      </div>
-      <div class="tab-pane fade" id="stap7">
-        <div class="well">
-          <h2>stap 7</h2>bla bla bla</div>
-        <div>
-          <a class="btn btn-default prev" href="#">Terug</a>
-          <a class="btn btn-default next" href="#">Doorgaan</a>
-        </div>
-      </div>
-      <div class="tab-pane fade" id="stap8">
-        <div class="well">
-          <h2>Uw prijs</h2>€ 50.000</div>
-        <a class="btn btn-success first" href="#">Gereed</a>
-      </div>
-    </div>
-    <div class="total-content" style="">
-      <div class="totalPrice">
-        <h3>Totaalprijs</h3>
-        <p><b>{{totalPrice | currency:"€"}}</b></p>
-        <br>
-        <h4>Toevoegingen</h4>
-        <div ng-repeat="extra in extras">
-          {{extra.description}}
-        </div>
-      </div>
     </div>
   </div>
-  <script src="scripts.js"></script>
+  <div class="total-content" style="">
+    <div class="totalPrice">
+      <h3 style="font-weight:bolder;">Totaalprijs</h3>
+      <p><b>{{totalPrice | currency : "€ "}}</b></p>
+      <br>
+      <h4>Toevoegingen</h4>
+      <div class="extraWrapper" ng-repeat="extra in extras">
+        {{extra.description}} {{extra.price | currency : "€ "}}
+      </div>
+              <div class="sendEmail">
+          <a class="btn btn-success" type="submit" ng-click="requestQuote()" ng-disabled="email.$invalid">Vraag offerte aan</a>
+        </div>
+    </div>
+  </div>
+</div>
+<script src="scripts.js"></script>
 </div>

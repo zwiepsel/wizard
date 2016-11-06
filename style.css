@@ -1,3 +1,32 @@
+h4, h3, h2, h1, label, p, a{
+    font-family: "Poiret One";
+    font-weight: 700;
+    }
+h3 {
+    font-size:34px;
+}
+
+label, p, a {
+        font-size: 18px;
+}
+label.btn, a.btn {
+    font-size:18px;
+    font-weight: bolder;
+}
+
+.totalPrice h4 {
+    font-weight: bolder;
+    font-size:24px;
+}
+
+.tab-container>label{
+    font-size: 22px;
+}
+
+.title {
+    text-align: center;
+}
+
 .garage {
     margin-top:20px;
     margin-bottom:20px;
@@ -30,13 +59,13 @@
 }
 
 .tab-content {
-    width:40%;
+    width:50%;
 
     float:left;
 }
 
 .total-content {
-    width:30%;
+    width:50%;
     text-align: center;
     float:left;
 }
@@ -44,4 +73,36 @@
 .tab-container {
     text-align: center;
 
+}
+
+.extraWrapper {
+    text-align: center;
+        font-family: "Poiret One";
+    font-weight: 700;
+    line-height:2;
+    font-size:18px;
+}
+
+.well {
+    text-align: center;
+}
+
+.emailForm {
+    width: 100%;
+    display: inline-block;
+}
+
+.emailFields {
+    width: 60%;
+    float:left;
+}
+
+.sendEmail {
+    text-align: center;
+    margin-top:40px;
+}
+
+.input-group {
+    margin-top: 10px;
+    width:100%;
 }
